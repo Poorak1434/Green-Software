@@ -25,6 +25,7 @@ import { RecyclingFlows } from './pages/RecyclingFlows';
 import Settings from './pages/Settings';
 import AdminDashboard from './pages/AdminDashboard';
 import { AdminRoute } from './components/auth/AdminRoute';
+import { MobileCompanion } from './features/devices/MobileCompanion';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -75,6 +76,9 @@ function App() {
                 </SignedOut>
               </>
             } />
+
+            {/* Mobile Companion Route for Wi-Fi Devices / Galaxy S24 Ultra */}
+            <Route path="/companion" element={<MobileCompanion />} />
 
             {/* Default Catch-all */}
             <Route path="*" element={<Navigate to="/dashboard" replace />} />

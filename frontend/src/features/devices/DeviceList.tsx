@@ -1,8 +1,9 @@
 import { Activity, Power, PowerOff } from 'lucide-react';
 import clsx from 'clsx';
 
-// Mock Data
+// Connected Devices
 const MOCK_DEVICES = [
+    { id: 's24-ultra', name: 'Samsung Galaxy S24 Ultra', type: 'Smartphone (Wi-Fi)', status: 'online', lastSeen: 'Now (Live Stream)' },
     { id: '1', name: 'Main Water Pump', type: 'Actuator', status: 'offline', lastSeen: '2 mins ago' },
     { id: '2', name: 'Ultrasonic Tank Sensor', type: 'Sensor', status: 'online', lastSeen: 'Now' },
     { id: '3', name: 'Smart Flow Meter (Inlet)', type: 'Sensor', status: 'online', lastSeen: 'Now' },
