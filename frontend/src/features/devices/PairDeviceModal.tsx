@@ -23,7 +23,8 @@ export const PairDeviceModal: React.FC<PairDeviceModalProps> = ({ isOpen, onClos
 
     if (!isOpen) return null;
 
-    const companionUrl = `http://${localIp}:5173/companion`;
+    const protocol = window.location.protocol === 'https:' ? 'https:' : 'https:';
+    const companionUrl = `${protocol}//${localIp}:5173/companion`;
     const curlScript = `curl -X POST http://${localIp}:8000/api/v1/devices/telemetry \\
   -H "Content-Type: application/json" \\
   -d '{"device_id": "galaxy-s24-ultra", "battery_level": 88, "is_charging": true, "power_draw_w": 4.5}'`;
