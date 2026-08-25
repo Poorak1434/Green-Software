@@ -10,7 +10,8 @@ import {
     RefreshCw,
     Building,
     Settings,
-    Users
+    Users,
+    Smartphone
 } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -73,6 +74,7 @@ export const SidebarNavigation = ({ isCollapsed = false }: SidebarNavigationProp
         {
             groupName: "Control & Automation",
             items: [
+                { name: 'Device Management', path: '/devices', icon: Smartphone },
                 { name: 'Manual Overrides', path: '/controls', icon: Power },
                 { name: 'Schedules', path: '/schedules', icon: CalendarClock },
                 { name: 'Pump Automations', path: '/automations', icon: Cpu },

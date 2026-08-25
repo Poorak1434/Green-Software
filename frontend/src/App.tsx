@@ -26,6 +26,7 @@ import Settings from './pages/Settings';
 import AdminDashboard from './pages/AdminDashboard';
 import { AdminRoute } from './components/auth/AdminRoute';
 import { MobileCompanion } from './features/devices/MobileCompanion';
+import { Devices } from './features/devices/Devices';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -53,6 +54,7 @@ function App() {
               <Route index element={<Navigate to="/dashboard" replace />} />
               <Route path="dashboard" element={<EnergyMonitoringOverview />} />
               <Route path="analytics" element={<ApplianceAnalytics />} />
+              <Route path="devices" element={<Devices />} />
               <Route path="forecasting" element={<UsageForecasting />} />
               <Route path="alerts" element={<AlertsAnomalies />} />
               <Route path="controls" element={<ManualOverrides />} />
