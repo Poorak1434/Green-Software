@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Users, UserCheck, Wind, Sun, Zap, Clock, CloudSun, ShieldCheck, Play, ArrowRightLeft, Sparkles, CheckCircle2, Thermometer } from 'lucide-react';
-import { PresenceRoomMap, RoomState } from '../features/automation/PresenceRoomMap';
+import { PresenceRoomMap, type RoomState } from '../features/automation/PresenceRoomMap';
 import axios from 'axios';
 
 interface FamilyProfile {
