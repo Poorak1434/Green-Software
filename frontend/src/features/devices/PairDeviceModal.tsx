@@ -7,17 +7,17 @@ interface PairDeviceModalProps {
 }
 
 export const PairDeviceModal: React.FC<PairDeviceModalProps> = ({ isOpen, onClose }) => {
-    const [localIp, setLocalIp] = useState<string>('192.168.1.100');
+    const [localIp, setLocalIp] = useState<string>('10.7.6.11');
     const [copied, setCopied] = useState<boolean>(false);
     const [activeTab, setActiveTab] = useState<'qr' | 'script'>('qr');
 
     useEffect(() => {
-        // Retrieve current window host or local IP
+        // If loaded via IP directly in browser, use that IP; otherwise use Mac LAN Wi-Fi IP 10.7.6.11
         const host = window.location.hostname;
         if (host && host !== 'localhost' && host !== '127.0.0.1') {
             setLocalIp(host);
         } else {
-            setLocalIp(window.location.hostname || '192.168.1.105');
+            setLocalIp('10.7.6.11');
         }
     }, []);
 
@@ -95,7 +95,17 @@ export const PairDeviceModal: React.FC<PairDeviceModalProps> = ({ isOpen, onClos
                             />
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="space-y-3">
+                            <div className="flex items-center justify-between text-xs font-bold text-slate-500 px-1">
+                                <span>Mac Wi-Fi IP Address:</span>
+                                <input
+                                    type="text"
+                                    value={localIp}
+                                    onChange={(e) => setLocalIp(e.target.value)}
+                                    className="w-28 text-center bg-[#d1d9e6] font-mono text-xs font-bold text-emerald-700 py-1 px-2 rounded-xl shadow-[inset_2px_2px_4px_#b8bec5,_inset_-2px_-2px_4px_#ffffff] outline-none"
+                                />
+                            </div>
+
                             <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">
                                 Scan with Samsung Galaxy S24 Ultra Camera
                             </p>
