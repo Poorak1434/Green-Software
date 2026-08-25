@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+ENV/
+env/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Build & Output
+dist/
+build/
+dist-ssr/
+*.tsbuildinfo
+.netlify/
+
+
+# OS & Editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Database & Storage
+*.sqlite
+*.sqlite3
