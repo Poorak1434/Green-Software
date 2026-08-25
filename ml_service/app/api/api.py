@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.endpoints import anomalies, forecast, telemetry, green_api, admin, devices
+from app.api.endpoints import anomalies, forecast, telemetry, green_api, admin, devices, family
 
 api_router = APIRouter()
 api_router.include_router(telemetry.router, prefix="/telemetry", tags=["telemetry"])
@@ -8,4 +8,6 @@ api_router.include_router(anomalies.router, prefix="/anomalies", tags=["ml_anoma
 api_router.include_router(green_api.router, prefix="/green", tags=["dashboard_api"])
 api_router.include_router(admin.router, prefix="/admin", tags=["admin"])
 api_router.include_router(devices.router, prefix="/devices", tags=["devices"])
+api_router.include_router(family.router, prefix="/family", tags=["family"])
+
 

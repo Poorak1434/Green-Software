@@ -67,6 +67,7 @@ export const SidebarNavigation = ({ isCollapsed = false }: SidebarNavigationProp
         {
             groupName: "Intelligence & Alerts",
             items: [
+                { name: 'AI Family & Presence', path: '/family', icon: Users },
                 { name: 'Usage Forecasting', path: '/forecasting', icon: TrendingUp },
                 { name: 'Alerts & Anomalies', path: '/alerts', icon: Bell, hasBadge: true },
             ]
